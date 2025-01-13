@@ -31,7 +31,7 @@
 <div id="wrapper">
 
     <!-- Sidebar -->
-    <?php include('admin/layouts/aside.php'); ?>
+    <?php include('admin/layouts/sidebar.php'); ?>
     <!-- End of Sidebar -->
 
     <!-- Content Wrapper -->
