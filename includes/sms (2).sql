@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 13, 2025 at 06:33 PM
+-- Generation Time: Jan 14, 2025 at 06:25 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -407,15 +407,28 @@ CREATE TABLE `timetable` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `user`
+-- Table structure for table `users`
 --
 
-CREATE TABLE `user` (
+CREATE TABLE `users` (
   `id` int(11) NOT NULL,
+  `name` varchar(11) NOT NULL,
   `email` varchar(255) NOT NULL,
   `password` varchar(255) NOT NULL,
   `role` enum('admin','teacher','student') NOT NULL DEFAULT 'student'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `users`
+--
+
+INSERT INTO `users` (`id`, `name`, `email`, `password`, `role`) VALUES
+(1, 'Owen Armstr', 'gowu@mailinator.com', '$2y$10$nxyiq6.MlGAVMLDznzKtaOz45ApFFVp2oO.auEUlZH/NBnWrkFI3m', 'student'),
+(2, 'Rafiun', 'asdasddasd@gmail.com', '$2y$10$DH3cITDhJuszw19nHYiU/eKpMMPjqMg/c3gYrnqggfy8T992fDJly', 'student'),
+(3, 'Perry Compt', 'zuvig@mailinator.com', '827ccb0eea8a706c4c34a16891f84e7b', 'student'),
+(4, 'Patricia Ya', 'dabuvo@mailinator.com', '827ccb0eea8a706c4c34a16891f84e7b', 'student'),
+(5, 'MD RAFIUN I', 'mdrafiunislam@gmail.com', '827ccb0eea8a706c4c34a16891f84e7b', 'student'),
+(6, 'MD RAFIUN I', 'mdrafiunislam675@gmail.com', '827ccb0eea8a706c4c34a16891f84e7b', 'student');
 
 --
 -- Indexes for dumped tables
@@ -566,9 +579,9 @@ ALTER TABLE `timetable`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `user`
+-- Indexes for table `users`
 --
-ALTER TABLE `user`
+ALTER TABLE `users`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `email` (`email`);
 
@@ -655,10 +668,10 @@ ALTER TABLE `timetable`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `user`
+-- AUTO_INCREMENT for table `users`
 --
-ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+ALTER TABLE `users`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
